@@ -31,12 +31,20 @@ public class subnetmask
 				octEnd.add(i);
 				 
 		}
-
+		
+		// Octets seperated into different strings
 		String firstOct = mask.substring(0, octEnd.get(0));
 		System.out.println(firstOct);
 
-		//String secondOct = mask.substring(, 
+		String secondOct = mask.substring(octEnd.get(0) + 1, octEnd.get(1));
+		System.out.println(secondOct); 
 		
+		String thirdOct = mask.substring(octEnd.get(1) + 1, octEnd.get(2));
+		System.out.println(thirdOct);
+
+		String fourthOct = mask.substring(octEnd.get(2) + 1);
+		System.out.println(fourthOct);
+
 
 		for(int i = 7; i < binaryCon.length; i--)
 		{
