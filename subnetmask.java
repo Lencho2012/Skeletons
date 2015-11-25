@@ -6,7 +6,9 @@ public class subnetmask
 {
 	public static void main(String[] args)
 	{
-		System.out.println("Please use the format XXX.XXX.XXX.XXX/XX");
+		
+		System.out.println("Enter the address prefix length.");	
+		System.out.println("Please use the CIDR notation. I.E. XXX.XXX.XXX.XXX/XX");
 		
 		Scanner input = new Scanner(System.in);
 		String IP = input.nextLine();
@@ -28,7 +30,7 @@ public class subnetmask
 		
 		int sep  = 1;
 
-
+		/*
 		for(int i = 0; i < IP.length() - 1; i++)
 		{
 			System.out.println(i);
@@ -82,7 +84,7 @@ public class subnetmask
 		System.out.println(prefix);
 
 		int[] powers = {128, 64, 32, 16, 8, 4, 2, 1};
-		
+		*/
 
 	}
 }
