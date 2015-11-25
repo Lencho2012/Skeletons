@@ -6,7 +6,7 @@ public class subnetmask
 {
 	public static void main(String[] args)
 	{
-		
+		maskToBin("255.255.248.0");
 	}
 
 	public int prefix(int[] binMask) //Calculating the prefix (netmask) length
@@ -15,7 +15,7 @@ public class subnetmask
 		return 1;
 	}
 
-	public int[] maskToBin(String mask)	//Turning the Netmask into binary
+	public static int[] maskToBin(String mask)	//Turning the Netmask into binary
 	{
 		int[] powers = {128, 64, 32, 16, 8, 4, 2, 1};	//Powers of 2
 		int[] binaryCon = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //A single octet
@@ -32,11 +32,13 @@ public class subnetmask
 				 
 		}
 
-		String firstOct = mask.substring(0, octEnd.get(0))
+		String firstOct = mask.substring(0, octEnd.get(0));
+		System.out.println(firstOct);
+
 		//String secondOct = mask.substring(, 
 		
 
-		for(int i = 7; i < binaryCon.length(); i--)
+		for(int i = 7; i < binaryCon.length; i--)
 		{
 			
 		}
