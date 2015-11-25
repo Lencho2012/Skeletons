@@ -9,6 +9,9 @@ public class subnetmask
 		maskToBin("255.255.248.0");
 	}
 
+
+	public final int[] powers = {128, 64, 32, 16, 8, 4, 2, 1};	//Powers of 2
+
 	public int prefix(int[] binMask) //Calculating the prefix (netmask) length
 	{
 		
@@ -17,12 +20,11 @@ public class subnetmask
 
 	public static int[] maskToBin(String mask)	//Turning the Netmask into binary
 	{
-		int[] powers = {128, 64, 32, 16, 8, 4, 2, 1};	//Powers of 2
 		int[] binaryCon = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //A single octet
 		
 		ArrayList<Integer> octEnd = new ArrayList<Integer>();
 		
-		int[] finalBin = {0};		
+		ArrayList<String> finalBin = {0};		
 
 		for(int i = 0; i < mask.length(); i++) //Finding octet ends
 		{
@@ -34,24 +36,43 @@ public class subnetmask
 		
 		// Octets seperated into different strings
 		String firstOct = mask.substring(0, octEnd.get(0));
-		System.out.println(firstOct);
+		int first = Integer.parseInt(firstOct);
+		System.out.println(firstOct + " or " + first);
 
 		String secondOct = mask.substring(octEnd.get(0) + 1, octEnd.get(1));
 		System.out.println(secondOct); 
+		int second = Integer.parseInt(secondOct);
 		
 		String thirdOct = mask.substring(octEnd.get(1) + 1, octEnd.get(2));
 		System.out.println(thirdOct);
+		int third = Integer.parseInt(thirdOct);
 
 		String fourthOct = mask.substring(octEnd.get(2) + 1);
 		System.out.println(fourthOct);
+		int fourth = Integer.parseInt(fourthOct);
 
-
+		//Put in a recursive method for octet binary conversion
 		for(int i = 7; i < binaryCon.length; i--)
 		{
-			
+						
 		}
 
 		return finalBin;
+	}
+
+
+	//Working on the recursive method
+	public static ArrayList<String> binary(int i, int oct, ArrayList<String> octBin)
+	{
+		for(i ; i < powers.length; i++)
+		{
+			if(oct >= powers[i])
+			{
+				octBin.add("1");
+				return binary(oct - po
+			}
+				
+		}	
 	}
 
 
