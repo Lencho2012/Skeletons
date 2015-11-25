@@ -7,6 +7,46 @@ public class subnetmask
 	public static void main(String[] args)
 	{
 		
+	}
+
+	public int prefix(int[] binMask) //Calculating the prefix (netmask) length
+	{
+		
+		return 1;
+	}
+
+	public int[] maskToBin(String mask)	//Turning the Netmask into binary
+	{
+		int[] powers = {128, 64, 32, 16, 8, 4, 2, 1};	//Powers of 2
+		int[] binaryCon = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //A single octet
+		
+		ArrayList<Integer> octEnd = new ArrayList<Integer>();
+		
+		int[] finalBin = {0};		
+
+		for(int i = 0; i < mask.length(); i++) //Finding octet ends
+		{
+			char maskChar = mask.charAt(i);
+			if(maskChar == '.')
+				octEnd.add(i);
+				 
+		}
+
+		String firstOct = mask.substring(0, octEnd.get(0))
+		//String secondOct = mask.substring(, 
+		
+
+		for(int i = 7; i < binaryCon.length(); i--)
+		{
+			
+		}
+
+		return finalBin;
+	}
+
+
+	public static void Test()
+	{
 		System.out.println("Enter the address prefix length.");	
 		System.out.println("Please use the CIDR notation. I.E. XXX.XXX.XXX.XXX/XX");
 		
@@ -29,7 +69,7 @@ public class subnetmask
 		String fourth = "";
 		
 		int sep  = 1;
-
+	}
 		/*
 		for(int i = 0; i < IP.length() - 1; i++)
 		{
@@ -83,8 +123,7 @@ public class subnetmask
 
 		System.out.println(prefix);
 
-		int[] powers = {128, 64, 32, 16, 8, 4, 2, 1};
 		*/
 
-	}
+	
 }
