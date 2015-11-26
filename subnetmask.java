@@ -62,6 +62,7 @@ public class subnetmask
 
 
 	//Working on the recursive method
+	/*
 	public static ArrayList<String> binary(int i, int oct, ArrayList<String> octBin)
 	{
 		for(i ; i < powers.length; i++)
@@ -74,7 +75,7 @@ public class subnetmask
 				
 		}	
 	}
-
+*/
 
 	public static void Test()
 	{
